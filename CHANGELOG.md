@@ -5,6 +5,8 @@ Versioning and keeps an [Unreleased] section.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-07-24
+
 - Provide an independent implementation on public `python-docx` and `lxml`
   APIs, without vendored schemas, macros, or native shims.
 - Add bounded reads, transactional edit batches, atomic output, and signature
@@ -21,4 +23,5 @@ Versioning and keeps an [Unreleased] section.
 - Add architecture, threat-model, compatibility, release, support, governance,
   and public-publishing documentation.
 
-[Unreleased]: https://github.com/evrenverse/docx-tool/commits/main
+[Unreleased]: https://github.com/evrenverse/docx-tool/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/evrenverse/docx-tool/releases/tag/v0.1.0
