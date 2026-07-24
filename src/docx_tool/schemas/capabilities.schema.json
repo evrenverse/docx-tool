@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/evrenverse/docx-tool/blob/main/src/docx_tool/schemas/capabilities.schema.json",
+  "title": "docx-tool capabilities response",
+  "type": "object",
+  "required": ["schema_version", "tool", "tool_version", "contract_version", "commands"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "tool": {"const": "docx-tool"},
+    "tool_version": {"type": "string"},
+    "contract_version": {"const": "1"},
+    "addressing": {"type": "string"},
+    "runtime_network_access": {"type": "boolean"},
+    "atomic_writes": {"type": "boolean"},
+    "structured_stdout": {"type": "boolean"},
+    "diagnostics_stderr": {"type": "boolean"},
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "mutates", "json"],
+        "properties": {
+          "name": {"type": "string"},
+          "mutates": {"type": "boolean"},
+          "json": {"type": "boolean"},
+          "optional_dependency": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "optional_dependencies": {"type": "array", "items": {"type": "string"}},
+    "schemas": {"type": "array", "items": {"type": "string"}},
+    "limits": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    }
+  },
+  "additionalProperties": false
+}

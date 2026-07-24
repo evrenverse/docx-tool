@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/evrenverse/docx-tool/blob/main/src/docx_tool/schemas/version.schema.json",
+  "title": "docx-tool version response",
+  "type": "object",
+  "required": ["schema_version", "tool", "version", "contract_version"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "tool": {"const": "docx-tool"},
+    "version": {"type": "string", "minLength": 1},
+    "contract_version": {"const": "1"}
+  },
+  "additionalProperties": false
+}

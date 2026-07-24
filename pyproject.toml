@@ -1,0 +1,104 @@
+[project]
+name = "docx-tool"
+version = "0.1.0"
+description = "Agent-friendly CLI for inspecting and editing DOCX documents"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{ name = "Evrenverse" }]
+keywords = ["docx", "word", "cli", "automation", "ai-agents", "agent-skill"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Office/Business",
+]
+dependencies = [
+    "typer>=0.27.0",
+    "python-docx>=1.2.0",
+    "lxml>=6.1.1",
+    "pillow>=12.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/evrenverse/docx-tool"
+Repository = "https://github.com/evrenverse/docx-tool"
+Issues = "https://github.com/evrenverse/docx-tool/issues"
+Changelog = "https://github.com/evrenverse/docx-tool/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/evrenverse/docx-tool#readme"
+Security = "https://github.com/evrenverse/docx-tool/security/policy"
+
+[project.scripts]
+docx-tool = "docx_tool.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docx_tool"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+    "/CHANGELOG.md",
+    "/AGENTS.md",
+    "/CODE_OF_CONDUCT.md",
+    "/CONTRIBUTING.md",
+    "/pyproject.toml",
+    "/SECURITY.md",
+    "/SUPPORT.md",
+    "/docs",
+    "/skills",
+    "/.codex-plugin",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["docx_tool"]
+
+[tool.coverage.report]
+fail_under = 75
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM", "RUF", "PERF"]
+ignore = [
+    "B008",  # Typer uses function calls in command defaults by design.
+    "B904",  # Typer exits intentionally replace lower-level CLI exceptions.
+]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[dependency-groups]
+dev = [
+    "build>=1.4",
+    "hypothesis>=6,<7",
+    "mypy>=2.3,<3",
+    "pip-audit>=2.10",
+    "pytest>=9.0",
+    "pytest-cov>=7.1",
+    "ruff>=0.15",
+    "twine>=6.2,<7",
+]

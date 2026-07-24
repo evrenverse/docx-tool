@@ -1,0 +1,4 @@
+interface:
+  display_name: "DOCX Tool"
+  short_description: "Inspect and edit Word documents safely"
+  default_prompt: "Use $docx-tool to inspect or update this DOCX file safely."

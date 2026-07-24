@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/evrenverse/docx-tool/blob/main/src/docx_tool/schemas/batch.schema.json",
+  "title": "docx-tool batch input",
+  "type": "array",
+  "maxItems": 10000,
+  "items": {
+    "oneOf": [
+      {
+        "type": "object",
+        "required": ["type", "search", "value"],
+        "properties": {
+          "type": {"const": "replace"},
+          "search": {"type": "string", "minLength": 1},
+          "value": {"type": "string"},
+          "first_only": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": ["type", "index", "value"],
+        "properties": {
+          "type": {"const": "paragraph"},
+          "index": {"type": "integer", "minimum": 1},
+          "value": {"type": "string"}
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": ["type", "table", "row", "column", "value"],
+        "properties": {
+          "type": {"const": "table_cell"},
+          "table": {"type": "integer", "minimum": 1},
+          "row": {"type": "integer", "minimum": 1},
+          "column": {"type": "integer", "minimum": 1},
+          "value": {"type": "string"}
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": ["type", "id", "checked"],
+        "properties": {
+          "type": {"const": "checkbox"},
+          "id": {"type": "string", "minLength": 1},
+          "checked": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": ["type", "id", "value"],
+        "properties": {
+          "type": {"const": "content_control"},
+          "id": {"type": "string", "minLength": 1},
+          "value": {"type": "string"}
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": ["type", "search", "image"],
+        "properties": {
+          "type": {"const": "image"},
+          "search": {"type": "string", "minLength": 1},
+          "image": {"type": "string", "minLength": 1},
+          "width_inches": {"type": "number", "exclusiveMinimum": 0}
+        },
+        "additionalProperties": false
+      }
+    ]
+  }
+}

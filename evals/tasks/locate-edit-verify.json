@@ -1,0 +1,10 @@
+{
+  "id": "locate-edit-verify",
+  "intent": "Locate an owner paragraph, update it transactionally, and verify it.",
+  "workflow": ["info", "find", "read", "write", "read"],
+  "success_criteria": [
+    "The owner is found without an unscoped document dump.",
+    "The original stays untouched because a separate output is requested.",
+    "The final bounded read returns Owner: Agent Team."
+  ]
+}

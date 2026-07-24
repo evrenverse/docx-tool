@@ -1,0 +1,34 @@
+# docx-tool
+
+> Agent-friendly CLI for inspecting and editing DOCX documents.
+
+Repository: https://github.com/evrenverse/docx-tool
+Package: https://pypi.org/project/docx-tool/
+License: MIT
+Language: Python
+
+## Start here
+
+- README.md: installation, guarantees, schemas, and limitations
+- AGENTS.md: safe agent setup and contribution rules
+- skills/docx-tool/SKILL.md: concise runtime workflow
+- skills/docx-tool/references/cli.md: command examples
+- SECURITY.md: trust model and parser boundaries
+- CONTRIBUTING.md: development contract
+- docs/agent-contract.md: versioned machine interface and exit behavior
+- docs/architecture.md: component and trust-boundary overview
+- evals/README.md: reproducible locate-edit-verify evaluation
+
+## CLI
+
+Install with:
+
+    uv tool install docx-tool
+
+Discover exact syntax with:
+
+    docx-tool --help
+    docx-tool <command> --help
+    docx-tool capabilities --json
+    docx-tool doctor --json
+    docx-tool schema

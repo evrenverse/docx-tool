@@ -1,0 +1,28 @@
+{
+  "name": "docx-tool",
+  "version": "0.1.0",
+  "description": "Teach AI agents to inspect and edit DOCX documents through a self-describing, bounded CLI.",
+  "author": {
+    "name": "Evrenverse",
+    "url": "https://github.com/evrenverse"
+  },
+  "homepage": "https://github.com/evrenverse/docx-tool#readme",
+  "repository": "https://github.com/evrenverse/docx-tool",
+  "license": "MIT",
+  "keywords": ["docx", "word", "cli", "automation", "agent-skill"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "DOCX Tool",
+    "shortDescription": "Inspect and edit Word documents safely",
+    "longDescription": "A focused Agent Skill for a versioned agent contract, bounded DOCX inspection, transactional edits, comments, and revisions.",
+    "developerName": "Evrenverse",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/evrenverse/docx-tool",
+    "defaultPrompt": [
+      "Inspect this DOCX and summarize its structure.",
+      "Apply these Word-document edits and verify them.",
+      "Review the tracked changes in this DOCX."
+    ]
+  }
+}

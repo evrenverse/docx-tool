@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support guide
+    url: https://github.com/evrenverse/docx-tool/blob/main/SUPPORT.md
+    about: Read troubleshooting and support expectations.
+  - name: Security vulnerability
+    url: https://github.com/evrenverse/docx-tool/security/advisories/new
+    about: Report security issues privately.
