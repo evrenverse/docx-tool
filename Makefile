@@ -17,7 +17,6 @@ eval:
 
 build:
 	uv build
-	uv run twine check dist/*
 
 audit:
 	uv export --no-dev --locked --no-emit-project -o requirements-audit.txt

@@ -14,7 +14,5 @@ Repository files are only half of a professional release. Before announcing:
   maintainer you cannot approve your own pull requests, so either add
   yourself to the ruleset bypass list or push release-blocking fixes to
   `main` directly.
-- Create the PyPI project/environment and configure Trusted Publishing before
-  pushing `v0.1.0`.
-- Confirm the published wheel contains the JSON schemas and the PyPI and GitHub
+- Confirm the release wheel contains the JSON schemas and that its GitHub
   attestations verify.

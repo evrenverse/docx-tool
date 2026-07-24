@@ -6,7 +6,7 @@
 | Operating systems | Linux |
 | Document format | `.docx` OOXML packages |
 | Optional integration | LibreOffice for `convert` and `export-pdf` |
-| Package installation | PyPI or a reviewed Git checkout through `uv tool` |
+| Package installation | Git checkout or release wheel through `uv tool` |
 
 CI tests all supported Python minors on Linux, including a job without the
 optional integration installed. The primary job installs LibreOffice and runs formatting, linting, mypy,

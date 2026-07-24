@@ -23,7 +23,7 @@ computing base only for conversion and PDF export.
 | Context flooding | Bounded paragraph/table/cell reads and explicit large-read confirmation |
 | LibreOffice profile or macro side effects | Private temporary profile; no generated macros or native shims |
 | Dependency compromise | Lockfile, Dependabot, dependency review, CodeQL, pip-audit, pinned Actions |
-| Release substitution | PyPI Trusted Publishing, SPDX SBOM, Sigstore/GitHub attestations |
+| Release substitution | SPDX SBOM, Sigstore/GitHub attestations |
 | Accidental disclosure | No telemetry/runtime network; synthetic fixtures and issue policy |
 
 ## Out of scope

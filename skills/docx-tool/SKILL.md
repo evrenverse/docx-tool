@@ -11,7 +11,7 @@ Use `docx-tool` instead of writing a one-off Word-processing script.
 
 1. Run `command -v docx-tool`.
 2. If missing and this repository is available, run `uv tool install .`.
-   Otherwise run `uv tool install docx-tool`.
+   Otherwise run `uv tool install git+https://github.com/evrenverse/docx-tool`.
 3. Run `docx-tool --version`.
 4. Run `docx-tool capabilities --json` and `docx-tool doctor --json`.
 5. Use `docx-tool schema <name>` when constructing structured input.

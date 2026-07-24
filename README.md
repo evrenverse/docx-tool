@@ -3,8 +3,6 @@
 [![CI](https://github.com/evrenverse/docx-tool/actions/workflows/ci.yml/badge.svg)](https://github.com/evrenverse/docx-tool/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/evrenverse/docx-tool/actions/workflows/codeql.yml/badge.svg)](https://github.com/evrenverse/docx-tool/actions/workflows/codeql.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/evrenverse/docx-tool/badge)](https://scorecard.dev/viewer/?uri=github.com/evrenverse/docx-tool)
-[![PyPI](https://img.shields.io/pypi/v/docx-tool.svg)](https://pypi.org/project/docx-tool/)
-[![Python](https://img.shields.io/pypi/pyversions/docx-tool.svg)](https://pypi.org/project/docx-tool/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 An agent-friendly CLI for inspecting and editing `.docx` documents. It offers
@@ -49,15 +47,12 @@ Copy this prompt:
 With [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uv tool install docx-tool
+uv tool install git+https://github.com/evrenverse/docx-tool
 docx-tool --version
 ```
 
-Directly from GitHub before the first PyPI release:
-
-```bash
-uv tool install git+https://github.com/evrenverse/docx-tool
-```
+This tool is not published to PyPI. Install it from the repository, or from
+a wheel attached to a [release](https://github.com/evrenverse/docx-tool/releases).
 
 From a clone:
 

@@ -31,7 +31,6 @@ jobs:
       - name: Run agent workflow eval
         run: uv run python evals/run_evals.py
       - run: uv build
-      - run: uv run twine check dist/*
 
   compatibility:
     name: Python ${{ matrix.python-version }}

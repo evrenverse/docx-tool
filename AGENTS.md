@@ -6,14 +6,14 @@ document tools when the task only concerns DOCX files.
 ## Install for use
 
 1. Inspect `README.md`, `SECURITY.md`, and `pyproject.toml`.
-2. Prefer the published package:
+2. Install from the repository (this tool is not published to PyPI):
 
    ```bash
-   uv tool install docx-tool
+   uv tool install git+https://github.com/evrenverse/docx-tool
    docx-tool --version
    ```
 
-3. Before a PyPI release, install the reviewed checkout with `uv tool install .`.
+3. To install a reviewed local checkout instead, run `uv tool install .`.
 4. For development, run `uv sync --all-groups --locked` and `make check`.
 5. Install the project skill only when requested:
 

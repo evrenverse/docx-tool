@@ -3,7 +3,6 @@
 > Agent-friendly CLI for inspecting and editing DOCX documents.
 
 Repository: https://github.com/evrenverse/docx-tool
-Package: https://pypi.org/project/docx-tool/
 License: MIT
 Language: Python
 
@@ -23,7 +22,7 @@ Language: Python
 
 Install with:
 
-    uv tool install docx-tool
+    uv tool install git+https://github.com/evrenverse/docx-tool
 
 Discover exact syntax with:
 
