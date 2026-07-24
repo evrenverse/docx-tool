@@ -35,7 +35,9 @@ def atomic_output(path: str | Path) -> Iterator[Path]:
     temporary = Path(temporary_name)
     try:
         yield temporary
-        sync_fd = os.open(temporary, os.O_RDONLY)
+        # Windows rejects fsync on a read-only handle with EBADF, so open
+        # the file for writing even though only its flush is needed.
+        sync_fd = os.open(temporary, os.O_RDWR)
         try:
             os.fsync(sync_fd)
         finally:
