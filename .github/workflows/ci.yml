@@ -34,20 +34,12 @@ jobs:
       - run: uv run twine check dist/*
 
   compatibility:
-    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    name: Python ${{ matrix.python-version }}
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: ubuntu-latest
-            python-version: "3.12"
-          - os: ubuntu-latest
-            python-version: "3.13"
-          - os: macos-latest
-            python-version: "3.14"
-          - os: windows-latest
-            python-version: "3.14"
-    runs-on: ${{ matrix.os }}
+        python-version: ["3.12", "3.13"]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

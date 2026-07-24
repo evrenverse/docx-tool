@@ -146,3 +146,12 @@ def test_in_place_write_preserves_mode(sample_docx):
     )
     assert result.exit_code == 0
     assert sample_docx.stat().st_mode & 0o777 == 0o640
+
+
+def test_write_rejects_non_utf8_changes(tmp_path, sample_docx):
+    """A legacy code-page edit plan exits cleanly instead of raising."""
+    changes = tmp_path / "cp1252.json"
+    changes.write_bytes('[{"type": "replace", "search": "Größe", "value": "x"}]'.encode("cp1252"))
+    result = runner.invoke(app, ["write", str(sample_docx), str(changes)])
+    assert result.exit_code == 1
+    assert "not valid UTF-8" in result.output

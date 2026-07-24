@@ -15,6 +15,7 @@ from docx_tool.commands.common import (
     MAX_BATCH_ITEMS,
     ensure_json_size,
     load_document,
+    read_utf8,
     reject_digitally_signed,
     save_document,
 )
@@ -255,7 +256,7 @@ def write(
         if not changes_path.is_file():
             typer.echo(f"Error: changes file not found: {changes}", err=True)
             raise typer.Exit(code=1)
-        raw = changes_path.read_text(encoding="utf-8")
+        raw = read_utf8(changes_path, "changes file")
     ensure_json_size(raw)
 
     try:

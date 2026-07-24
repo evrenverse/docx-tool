@@ -19,6 +19,19 @@ MAX_JSON_INPUT_BYTES = 10 * 1024 * 1024
 MAX_BATCH_ITEMS = 10_000
 
 
+def read_utf8(path: Path, kind: str) -> str:
+    """Read a text file, exiting cleanly when its bytes are not UTF-8.
+
+    A file saved in a legacy code page would otherwise surface a raw
+    UnicodeDecodeError traceback instead of a diagnostic on stderr.
+    """
+    try:
+        return path.read_text(encoding="utf-8")
+    except UnicodeDecodeError as e:
+        typer.echo(f"Error: {kind} is not valid UTF-8: {path} ({e.reason})", err=True)
+        raise typer.Exit(code=1)
+
+
 @contextmanager
 def atomic_output(path: str | Path) -> Iterator[Path]:
     """Yield a sibling temp path and publish it atomically after success."""
@@ -35,8 +48,8 @@ def atomic_output(path: str | Path) -> Iterator[Path]:
     temporary = Path(temporary_name)
     try:
         yield temporary
-        # Windows rejects fsync on a read-only handle with EBADF, so open
-        # the file for writing even though only its flush is needed.
+        # Opened read-write because fsync on a read-only handle is not
+        # portable, even though only the flush is needed here.
         sync_fd = os.open(temporary, os.O_RDWR)
         try:
             os.fsync(sync_fd)

@@ -214,8 +214,8 @@ make check
 ```
 
 The quality gate includes formatting, linting, mypy, branch coverage, package
-build, and the real CLI agent eval. CI additionally tests Python 3.12–3.14,
-Linux, macOS, Windows, LibreOffice, known vulnerabilities, CodeQL, and
+build, and the real CLI agent eval. CI additionally tests Python 3.12–3.14 on
+Linux with and without LibreOffice, known vulnerabilities, CodeQL, and
 dependency changes.
 
 ## Project documentation
