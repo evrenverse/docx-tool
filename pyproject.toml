@@ -95,7 +95,7 @@ warn_unused_ignores = true
 [dependency-groups]
 dev = [
     "build>=1.4",
-    "hypothesis>=6,<7",
+    "hypothesis>=6.161.5,<7",
     "mypy>=2.3,<3",
     "pip-audit>=2.10",
     "pytest>=9.0",
