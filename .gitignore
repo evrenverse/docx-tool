@@ -16,3 +16,6 @@ tests/fixtures/output_*
 Thumbs.db
 .idea/
 .vscode/
+
+# Local project card — not part of the published repository.
+PROJECT.md
