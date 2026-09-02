@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/social-preview.png" alt="docx-tool — agent-friendly Word document automation" width="100%">
+</p>
+
 # docx-tool
 
 [![CI](https://github.com/evrenverse/docx-tool/actions/workflows/ci.yml/badge.svg)](https://github.com/evrenverse/docx-tool/actions/workflows/ci.yml)
